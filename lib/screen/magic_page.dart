@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magic_8_ball/data/constant.dart';
 import 'package:magic_8_ball/data/magic_data.dart';
+import 'package:magic_8_ball/widget/decision.dart';
 
 class MagicPage extends StatefulWidget {
   const MagicPage({Key? key, required this.title}) : super(key: key);
@@ -31,9 +32,7 @@ class _MagicPageState extends State<MagicPage> {
           style: kTitleStyle,
         ),
       ),
-      body: Center(
-          child: GestureDetector(
-              onTap: answer, child: Image.asset(magicData.imageSrc))),
+      body: Decision(imagePath: magicData.imageSrc, onTap: answer),
     );
   }
 }
